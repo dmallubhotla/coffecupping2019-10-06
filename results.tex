@@ -1,0 +1,153 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{geometry}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage[plain]{fancyref}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\begin{document}
+
+\title{2019-10-06 Cupping session}
+
+\tableofcontents
+
+\section{Data entry and handling} \label{sec:Data}
+
+Five coffees were tested (with urls!), with 5 different tasters:
+\begin{itemize}
+	\item \href{https://www.intelligentsiacoffee.com/zirikana-rwanda}{Intelligentsia's Zirikana Rwanda~(ZR)}
+	\item \href{https://www.jbccoffeeroasters.com/tano-batak-sumatra}{JBC's Tano Batak Sumatra~(JBC)}
+	\item \href{https://bluebottlecoffee.com/store/beta-blend}{Blue Bottle's Beta Blend~(BBBB)}
+	\item \href{https://www.target.com/p/organic-ethiopian-yirgacheffe-light-roast-whole-bean-coffee-10oz-archer-farms-153/-/A-50566950}{Archer Farms' Ethiopian Organic~(AF)}
+	\item \href{https://rubycoffeeroasters.com/collections/coffee/products/ethiopia-benti-nenka}{Ruby's Benti Nenka~(Ruby)}
+\end{itemize}
+
+I converted each scale on the form into a value from $0$ to $4$.
+No, I don't know why I didn't use $1$ to $5$.
+I roughly estimated where to enter values when they were halfway between data points, this probably skewed the data slightly because I was very lazy and imprecise.
+The summary statistics for the data are presented in \fref{tab:statistics}, with averages and standard deviations.
+In \fref{tab:statistics}, the ``Q'' column includes our data for the quality of the characteristic (as in, how much we enjoyed or disliked it), in contrast to the ``I'' column, which represents intensity (how strong or weak it was).
+
+A list of the descriptors used is provided in \fref{tab:descriptors}.
+I changed some spellings (some people wrote flavor instead of flavour omg), but otherwise just threw them in a list.
+Any duplicates in that table are because two people each commented the same thing.
+
+\section{Salient features from the data} \label{sec:SalientFeatures}
+Some interesting notes (although I did zero statistical analysis, so most may not actually be true):
+\begin{itemize}
+	\item Our standard deviations were all smaller than $2$, and usually around $1$, which means we were consistently able to narrow down a value to at least half the range (which I count as a win).
+	\item The standard deviations for aroma, body and finish were all somewhat larger than for sweetness and acidity.
+	I'm guessing this was random chance and means nothing.
+	\item ZR was billed as sweet and tart, but its acidity and sweetness intensities were very comparable to the other coffees being compared.
+	JBC had a higher sweetness intensity, and Ruby had a higher acidity intensity.
+	We enjoyed the tartness of the ZR more than we enjoyed any other intensity.
+	\item BBBB was a blend, which theoretically should leave it smoother and less distinctive.
+	We largely detected this effect: its intensity scores were in the middle of the pack (excluding Target), and we noticed it having a very short finish and very slight body.
+	Even more telling, the descriptors for this are striking, picking it out as light, not very distinct and very coffee-esque.
+	That's impressive
+	\item Our statistics for AF are actually pretty scattergun, especially for aroma and acidity.
+	My theory is that its odd taste was hard for us to characterise, so we couldn't tell if the bad part of the flavour came from acidity or not.
+	It was by far the least sweet, which could have been because any sweetness it had was drenched by bitterness.
+	I believe it's fair to say that we were able to identify it as the Target coffee, even through the double-blinding procedure.
+\end{itemize}
+
+\section{Overall score} \label{sec:Overall}
+Overall scores are presented in \fref{tab:overall}.
+The overall column represents the scores entered on the forms.
+Because not all of the surveys included very granular data, I mapped ranking systems to point values and created the ``Calculated Score'' column, which also incorporates the aggregate calculations some of us did.
+I'd interpret the ``Calculated Score'' column as my personal interpretation of other people's overall scores, rather than anything rigorous, meaningful, or reflective of anyone else's opinions.
+It only occurs in \fref{tab:statistics} because I was very proud of getting the columns to line up properly even for the values spanning multiple rows, and refused to remove it when I realised it would be unnecessary.
+
+Overall, it's fair to say we had a least-favourite.
+Ruby wasn't at the top of every list, but it scored very high overall, and as a result had the highest average scores
+Interestingly, it received very similar scores to ZR for quality in the different measures,  which comes in second place.
+I might conjecture that BBBB over-performed in the overall score vs the calculated one because it was broadly inoffensive, but indistinct.
+As a result, no individual quality was spectacular (every other non-AF coffee had higher quality scores than BBBB's peak quality in sweetness).
+It seems like for the JBC coffee, it had a more pronounced flavour, with more of every characteristic besides acidity than BBBB.
+Our descriptors for JBC reflected the stronger taste, but that intensity wasn't necessarily entirely pleasant.
+
+\section{Conclusion} \label{sec:Conclusions}
+I think the main takeaways are as follows:
+\begin{itemize}
+	\item We were all able to distinguish good coffee from Target
+	\item We all noted the lightness and sweetness of the Ruby Benti Nenka
+	\item Our aggregate data was able to pick out a blend
+	\item Baklava are delicious
+\end{itemize}
+
+\appendix
+\section{Tables} \label{sec:tables}
+\newgeometry{margin=2.6cm} % modify this if you need even more space
+\begin{landscape}
+	\begin{table}
+		\begin{tabular}{@{} r||c|S[table-format=3.2(4),separate-uncertainty]|S[table-format=3.2(4),separate-uncertainty]|S[table-format=3.2(4),separate-uncertainty]|S[table-format=3.2(4),separate-uncertainty]|S[table-format=3.2(4),separate-uncertainty]| c @{}}
+			\multicolumn{1}{c||}{Coffee} &  & \multicolumn{1}{|c|}{Aroma} & \multicolumn{1}{|c|}{Acidity }& \multicolumn{1}{|c|}{Sweetness} & \multicolumn{1}{|c|}{Body} & \multicolumn{1}{|c|}{Finish} & {Calculated Score}\\
+			\hline
+			\multirow{2}{5em}{ZR} & Q & 2.05 \pm 1.22 & 3.73 \pm 0.55 & 2.73 \pm 0.49 & 3 \pm 0.82 & 2.45 \pm 0.97 & \multirow{2}*{\tablenum[separate-uncertainty]{6.38 \pm 0.85}} \\
+			& I & 1.3 \pm 1.25 & 2.5 \pm 0.87 & 2.12 \pm 0.76 & 2.5 \pm 1.32 & 1.75 \pm 0.96 \\
+			\hline
+			\multirow{2}{5em}{JBC}  & Q & 2 \pm 1.15 & 2.73 \pm 0.95 & 3 \pm 0.82 & 2.25 \pm 0.5 & 2.1 \pm 0.99 &\multirow{2}*{\tablenum[separate-uncertainty]{6.13 \pm 1.31}} \\
+			& I & 2.05 \pm 0.75 & 1.88 \pm 1.25 & 2.68 \pm 0.46 & 1.68 \pm 0.46 & 2 \pm 1.41 \\
+			\hline
+			\multirow{2}{5em}{BBBB} & Q & 1.5 \pm 1 & 1.75 \pm 0.5 & 2.45 \pm 1.29 & 2 \pm 0.82 & 2 \pm 1.41 &\multirow{2}*{\tablenum[separate-uncertainty]{5.13 \pm 0.85}} \\
+			& I & 1.3 \pm 1.01 & 2.24 \pm 1.03 & 2.14 \pm 0.67 & 0.6 \pm 0.89 & 0.65 \pm 0.47 \\
+			\hline
+			\multirow{2}{5em}{AF} & Q & 0.25 \pm 0.5 & 1.63 \pm 1.11 & 0.55 \pm 0.64 & 0.88 \pm 1.03 & 0.5 \pm 0.58 &\multirow{2}*{\tablenum[separate-uncertainty]{1.75 \pm 0.5}} \\
+			& I & 2.5 \pm 1.91 & 2.32 \pm 1.42 & 1.2 \pm 0.84 & 1.8 \pm 0.84 & 3.25 \pm 0.96 \\
+			\hline
+			\multirow{2}{5em}{Ruby} & Q & 3.35 \pm 0.94 & 3.2 \pm 0.91 & 3.03 \pm 1.42 & 3.15 \pm 1.01 & 2.88 \pm 1.31 &\multirow{2}*{\tablenum[separate-uncertainty]{8.25 \pm 2.36}} \\
+			& I & 1.98 \pm 1.07 & 2.74 \pm 1.02 & 2.16 \pm 1.46 & 1.3 \pm 1.54 & 2.25 \pm 0.96 \\
+			\hline
+		\end{tabular}
+		\caption{Summary statistics from data, with standard deviation}
+		\label{tab:statistics}
+	\end{table}
+
+	\begin{table}
+		\begin{tabular}{c || c}
+			ZR & earthy, morning, roasty, wood, fruity\\
+			\hline
+			JBC & animal, celery dipped in saltwater, fruity, nice intensity, agave, chocolatey \\
+			\hline
+			BBBB & earthy, medical, the coffiest, not a ton of distinct flavour, coffeey, fruity, not as heavy \\
+			\hline
+			AF & nuts, medical, bitter, sour, like I ate something I wasn't supposed to, meh, bitter, turpentine, most normal, is this target \\
+			\hline
+			Ruby & floral, chocolate, round/spherical, blue-grey, nutty, mild, lychee, yay! \\
+			\hline
+		\end{tabular}
+		\caption{Descriptors and taste notes}
+		\label{tab:descriptors}
+	\end{table}
+
+	\begin{table}
+		\begin{tabular}{c || S[table-format=3.2(4),separate-uncertainty] | S[table-format=3.2(4),separate-uncertainty]}
+			{Coffee} & {Overall Score} & {Calculated Score} \\
+			\hline
+			ZR & 7.00 \pm 0.87 & 6.38 \pm 0.85 \\
+			\hline
+			JBC &  5.00 \pm 1.00 & 6.13 \pm 1.31 \\
+			\hline
+			BBBB & 6.17 \pm 1.61 & 5.13 \pm 0.85 \\
+			\hline
+			AF & 1.67 \pm 0.58 & 1.75 \pm 0.5 \\
+			\hline
+			Ruby & 8.00 \pm 1.00 & 8.25 \pm 2.36 \\
+			\hline
+		\end{tabular}
+		\caption{Overall scores (with description for the calculated column in the text)}
+		\label{tab:overall}
+	\end{table}
+\end{landscape}
+\restoregeometry
+\end{document}
